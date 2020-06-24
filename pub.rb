@@ -10,7 +10,7 @@ class Pub
 
     def check_drink(drink_name)
         for drink in drinks
-            return true if drink_name == drink.name
+            return true if drink_name == drink[:type].name
         end
         return false
     end
@@ -30,6 +30,14 @@ class Pub
     def customer_legal_age(customer)
         return true if (customer.age >= 18)
         return false
+    end
+
+    def count_all_stock(bar)
+        total = 0
+        for drink in bar
+            total += drink[:stock]
+        end
+        return total
     end
 
 end

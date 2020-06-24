@@ -21,4 +21,6 @@ class Customer
         @drunkenness -= food.rejuvenation_level
     end
 
+    
+
 end

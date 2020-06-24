@@ -13,7 +13,19 @@ class PubTest < MiniTest::Test
         @drink2 = Drink.new("Corona", 4, 1)
         @drink3 = Drink.new("Jack Daniels", 2, 4)
         @drink4 = Drink.new("Strongbow", 3, 3)
-        @bar = [@drink1, @drink2, @drink3, @drink4]
+        @bar = [ {
+                type: @drink1,
+                stock: 5 },
+                {
+                type: @drink2,
+                stock: 10 },
+                {
+                type: @drink3,
+                stock: 15 },
+                {
+                type: @drink4,
+                stock: 20 }
+            ]
         @pub = Pub.new("Three Broomsticks", 1000, @bar)
         @customer1 = Customer.new("John", 20, 35, 0)
         @customer2 = Customer.new("Bob", 55, 16, 0)
@@ -83,6 +95,10 @@ class PubTest < MiniTest::Test
 
     def test_is_customer_legal_age_false()
         assert_equal(false, @pub.customer_legal_age(@customer2))
+    end
+
+    def test_how_many_drinks()
+        assert_equal(50, @pub.count_all_stock(@bar))
     end
 
 end
