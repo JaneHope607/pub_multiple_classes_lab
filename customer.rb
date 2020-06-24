@@ -7,4 +7,10 @@ class Customer
         @wallet = wallet
     end
 
+    def remove_money(drink)
+        @wallet -= drink.price
+    end
+
+    
+
 end
