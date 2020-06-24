@@ -37,4 +37,10 @@ class PubTest < MiniTest::Test
         drink = @pub.check_drink("vodka")
         assert_equal(false, drink)
     end
+
+    def test_add_money_to_till()
+        @pub.add_money_to_till(@drink1)
+        assert_equal(1005, @pub.till)
+    end
+
 end

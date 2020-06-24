@@ -15,4 +15,8 @@ class Pub
         return false
     end
 
+    def add_money_to_till(drink_name)
+        return @till += drink_name.price
+    end
+
 end
