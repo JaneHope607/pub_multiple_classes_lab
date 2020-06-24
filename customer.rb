@@ -12,11 +12,5 @@ class Customer
         @wallet -= drink.price
     end
 
-    def customer_legal_age()
-        return true if (@age >= 18)
-        return false
-    end
-
-    
 
 end

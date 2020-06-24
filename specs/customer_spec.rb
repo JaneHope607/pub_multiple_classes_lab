@@ -29,19 +29,13 @@ class CustomerTest < MiniTest::Test
         assert_equal(15, @customer1.wallet)
     end
 
-    # def test_customer_can_buy_drink()
-    #     @customer1.buy_drink_from_pub(@pub, @drink1)
-    #     assert_equal(15, @customer1.wallet)
-    #     assert_equal(1005, @pub.till)
+    # def test_is_customer_legal_age_true()
+    #     assert_equal(true, @customer1.customer_legal_age())
     # end
 
-    def test_is_customer_legal_age_true()
-        assert_equal(true, @customer1.customer_legal_age())
-    end
-
-    def test_is_customer_legal_age_false()
-        assert_equal(false, @customer2.customer_legal_age())
-    end
+    # def test_is_customer_legal_age_false()
+    #     assert_equal(false, @customer2.customer_legal_age())
+    # end
 
     def test_check_age()
         assert_equal(35, @customer1.age)

@@ -19,11 +19,16 @@ class Pub
         return @till += drink_name.price
     end
 
-    def buy_drink_from_pub(pub, drink_name)
-        if (pub.check_drink(drink_name.name) && customer_legal_age())
-            pub.add_money_to_till(drink_name)
-            remove_money(drink_name)
+    def buy_drink_from_pub(customer, drink_name)
+        if (check_drink(drink_name.name) && customer_legal_age(customer))
+            add_money_to_till(drink_name)
+            customer.remove_money(drink_name)
         end
+    end
+
+    def customer_legal_age(customer)
+        return true if (customer.age >= 18)
+        return false
     end
 
 end
