@@ -14,6 +14,8 @@ class FoodTest < MiniTest::Test
         assert_equal("chips", @food.name)
     end
 
-    # def test_check_price()
+    def test_check_price()
+        assert_equal(5, @food.price)
+    end
 
 end
