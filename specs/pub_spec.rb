@@ -17,6 +17,7 @@ class PubTest < MiniTest::Test
         @pub = Pub.new("Three Broomsticks", 1000, @bar)
         @customer1 = Customer.new("John", 20, 35, 0)
         @customer2 = Customer.new("Bob", 55, 16, 0)
+        @customer3 = Customer.new("Lucy", 30, 25, 6)
     end
 
     def test_check_name()
@@ -67,6 +68,13 @@ class PubTest < MiniTest::Test
         assert_equal(55, @customer2.wallet)
         assert_equal(1000, @pub.till)
         assert_equal(0, @customer2.drunkenness())
+    end
+
+    def test_customer_cannot_buy_drink_too_drunk()
+        @pub.buy_drink_from_pub(@customer3, @drink3)
+        assert_equal(30, @customer3.wallet)
+        assert_equal(1000, @pub.till)
+        assert_equal(6, @customer3.drunkenness)
     end
 
     def test_is_customer_legal_age_true()

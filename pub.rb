@@ -20,7 +20,7 @@ class Pub
     end
 
     def buy_drink_from_pub(customer, drink_name)
-        if (check_drink(drink_name.name) && customer_legal_age(customer))
+        if (check_drink(drink_name.name) && customer_legal_age(customer) && customer.drunkenness <= 5)
             add_money_to_till(drink_name)
             customer.remove_money(drink_name)
             customer.increase_drunkenness(drink_name)
