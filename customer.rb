@@ -13,5 +13,8 @@ class Customer
         @wallet -= drink.price
     end
 
+    def increase_drunkenness(drink)
+        @drunkenness += drink.alcohol_level
+    end
 
 end
