@@ -23,6 +23,7 @@ class Pub
         if (check_drink(drink_name.name) && customer_legal_age(customer))
             add_money_to_till(drink_name)
             customer.remove_money(drink_name)
+            customer.increase_drunkenness(drink_name)
         end
     end
 
