@@ -4,6 +4,7 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 require_relative('../pub')
 require_relative('../drink')
+require_relative('../customer')
 
 class PubTest < MiniTest::Test
 
@@ -14,6 +15,7 @@ class PubTest < MiniTest::Test
         @drink4 = Drink.new("Strongbow", 3)
         @bar = [@drink1, @drink2, @drink3, @drink4]
         @pub = Pub.new("Three Broomsticks", 1000, @bar)
+        @customer1 = Customer.new("John", 20, 35)
     end
 
     def test_check_name()
@@ -40,6 +42,12 @@ class PubTest < MiniTest::Test
 
     def test_add_money_to_till()
         @pub.add_money_to_till(@drink1)
+        assert_equal(1005, @pub.till)
+    end
+
+    def test_customer_can_buy_drink()
+        @customer1.buy_drink_from_pub(@pub, @drink1)
+        assert_equal(15, @customer1.wallet)
         assert_equal(1005, @pub.till)
     end
 
