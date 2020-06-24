@@ -40,4 +40,12 @@ class Pub
         return total
     end
 
+    def stock_value(bar)
+        total = 0
+        for drink in bar
+            total += drink[:stock] * drink[:type].price
+        end
+        return total
+    end
+
 end

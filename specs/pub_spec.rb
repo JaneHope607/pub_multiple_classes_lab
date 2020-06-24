@@ -101,4 +101,8 @@ class PubTest < MiniTest::Test
         assert_equal(50, @pub.count_all_stock(@bar))
     end
 
+    def test_stock_value()
+        assert_equal(155, @pub.stock_value(@bar))
+    end
+
 end
