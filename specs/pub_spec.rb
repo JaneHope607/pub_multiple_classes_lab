@@ -15,4 +15,8 @@ class PubTest < MiniTest::Test
         assert_equal("Three Broomsticks", @pub.name)
     end
 
+    def test_check_till()
+        assert_equal(1000, @pub.till)
+    end
+
 end
