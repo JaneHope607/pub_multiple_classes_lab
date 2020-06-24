@@ -30,6 +30,12 @@ class CustomerTest < MiniTest::Test
         @customer1.remove_money(@drink1)
         assert_equal(15, @customer1.wallet)
     end
+
+    def test_customer_can_buy_drink()
+        @customer1.buy_drink_from_pub(@pub, @drink1)
+        assert_equal(15, @customer1.wallet)
+        assert_equal(1005, @pub.till)
+    end
     
 
 end
