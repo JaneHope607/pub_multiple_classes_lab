@@ -53,6 +53,13 @@ class PubTest < MiniTest::Test
         assert_equal(1005, @pub.till)
     end
 
+    def test_customer_cannot_buy_drink_no_drink()
+        drink = Drink.new("Glenlivet", 4)
+        @pub.buy_drink_from_pub(@customer1, drink)
+        assert_equal(20, @customer1.wallet)
+        assert_equal(1000, @pub.till)
+    end
+
     def test_is_customer_legal_age_true()
         assert_equal(true, @pub.customer_legal_age(@customer1))
     end
