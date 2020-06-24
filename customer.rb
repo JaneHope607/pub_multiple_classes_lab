@@ -19,6 +19,10 @@ class Customer
         end
     end
 
+    def customer_legal_age()
+        return true if (@age >= 18)
+    end
+
     
 
 end

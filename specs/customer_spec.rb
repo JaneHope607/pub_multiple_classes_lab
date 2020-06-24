@@ -37,9 +37,9 @@ class CustomerTest < MiniTest::Test
         assert_equal(1005, @pub.till)
     end
 
-    # def test_is_customer_legal_age()
-    #     assert_equal(true, @customer1.customer_legal_age())
-    # end
+    def test_is_customer_legal_age()
+        assert_equal(true, @customer1.customer_legal_age())
+    end
 
     def test_check_age()
         assert_equal(35, @customer1.age)
