@@ -19,4 +19,8 @@ class PubTest < MiniTest::Test
         assert_equal(1000, @pub.till)
     end
 
+    def test_drinks()
+        assert_equal(@bar, @pub.drinks)
+    end
+
 end
