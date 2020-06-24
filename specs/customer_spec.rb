@@ -15,7 +15,7 @@ class CustomerTest < MiniTest::Test
         @drink4 = Drink.new("Strongbow", 3)
         @bar = [@drink1, @drink2, @drink3, @drink4]
         @pub = Pub.new("Three Broomsticks", 1000, @bar)
-        @customer1 = Customer.new("John", 20)
+        @customer1 = Customer.new("John", 20, 35)
     end
 
     def test_check_name()
@@ -35,6 +35,14 @@ class CustomerTest < MiniTest::Test
         @customer1.buy_drink_from_pub(@pub, @drink1)
         assert_equal(15, @customer1.wallet)
         assert_equal(1005, @pub.till)
+    end
+
+    # def test_is_customer_legal_age()
+    #     assert_equal(true, @customer1.customer_legal_age())
+    # end
+
+    def test_check_age()
+        assert_equal(35, @customer1.age)
     end
     
 
